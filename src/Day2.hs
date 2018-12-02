@@ -27,11 +27,7 @@ singleReplaced (a:as) (b:bs)
 
 
 getCommon :: Eq a => [a] -> [a] -> [a]
-getCommon [] _ = []
-getCommon _ [] = []
-getCommon (a:as) (b:bs)
-  | a == b    = a : getCommon as bs
-  | otherwise =     getCommon as bs
+getCommon a b = map fst . filter (uncurry (==)) $ zip a b
 
 part2 :: IO ()
 part2 = interact (show . uncurry getCommon . checkPairs . lines)
