@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d36ab30e71d04ea99f4af0cc5a7daa0bdb7f468a8d6f27e0f9352dd848081939
+-- hash: 3b893925faaa4a75557ae8816432a2060a9a3a200206a4f4f6163827d68b1daa
 
 name:           advant-of-code-y2018
 version:        0.1.0.0
@@ -22,6 +22,7 @@ executable advent-of-code-y2018
   main-is: Main.hs
   other-modules:
       Day1
+      Day2
       Paths_advant_of_code_y2018
   hs-source-dirs:
       src
