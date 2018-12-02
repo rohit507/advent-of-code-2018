@@ -13,8 +13,74 @@ extra-source-files:
 
 dependencies:
   - base >= 4.7 && < 5
+  - containers
 
+default-extensions:
+  ApplicativeDo
+  BangPatterns
+  ConstraintKinds
+  DataKinds
+  DefaultSignatures
+  DeriveDataTypeable
+  DeriveFoldable
+  DeriveFunctor
+  DeriveGeneric
+  DeriveLift
+  DeriveTraversable
+  DerivingStrategies
+  DuplicateRecordFields
+  EmptyCase
+  EmptyDataDecls
+  ExistentialQuantification
+  ExtendedDefaultRules
+  FlexibleContexts
+  FlexibleInstances
+  FunctionalDependencies
+  GADTs
+  GeneralizedNewtypeDeriving
+  ImplicitParams
+  InstanceSigs
+  KindSignatures
+  LambdaCase
+  MultiParamTypeClasses
+  MultiWayIf
+  NamedFieldPuns
+  NoMonomorphismRestriction
+  OverloadedLabels
+  OverloadedLists
+  OverloadedStrings
+  PackageImports
+  PatternSynonyms
+  QuasiQuotes
+  RankNTypes
+  RecordWildCards
+  RecursiveDo
+  ScopedTypeVariables
+  StandaloneDeriving
+  TemplateHaskell
+  TupleSections
+  TypeApplications
+  TypeFamilies
+  TypeFamilyDependencies
+  TypeOperators
+  ViewPatterns
+
+ghc-options:
+  - -Wall
+  - -Wcompat
+  - -Wincomplete-record-updates
+  - -Wincomplete-uni-patterns
+  # - -Werror
+  - -Wsemigroup
+  - -Wredundant-constraints
+  - -fno-warn-orphans
+  - -fno-warn-type-defaults
+  - -fno-warn-name-shadowing
+  - -fno-warn-unticked-promoted-constructors
+  - -fno-warn-unused-imports # TODO :: Re-enable when you feel like cleaning
+                             #         up your imports.
+  # - -fprint-potential-instances
 executables:
-  advant-of-code-y2018:
+  advent-of-code-y2018:
     source-dirs:      src
     main:             Main.hs
