@@ -1,0 +1,180 @@
+# HLint configuration file
+# https://github.com/ndmitchell/hlint
+##########################
+
+# This file contains a template configuration file, which is typically
+# placed as .hlint.yaml in the root of your project
+
+# Warnings currently triggered by your code
+# - ignore: {name: "Eta reduce"}
+# - ignore: {name: "Use unless"}
+# - ignore: {name: "Use fewer imports"}
+# - ignore: {name: "Use sum"}
+# - ignore: {name: "Fuse foldr/map"}
+# - ignore: {name: "Parse error"}
+# - ignore: {name: "Redundant bracket"}
+
+# Specify additional command line arguments
+#
+- arguments:
+    - "--color=auto"
+    - "--cpp-simple"
+    - "-XApplicativeDo"
+    - "-XBangPatterns"
+    - "-XCPP"
+    - "-XConstraintKinds"
+    - "-XDataKinds"
+    - "-XDefaultSignatures"
+    - "-XDeriveDataTypeable"
+    - "-XDeriveFoldable"
+    - "-XDeriveFunctor"
+    - "-XDeriveGeneric"
+    - "-XDeriveLift"
+    - "-XDeriveTraversable"
+    - "-XDerivingStrategies"
+    - "-XDuplicateRecordFields"
+    - "-XEmptyCase"
+    - "-XEmptyDataDecls"
+    - "-XExistentialQuantification"
+    - "-XFlexibleContexts"
+    - "-XFlexibleInstances"
+    - "-XFunctionalDependencies"
+    - "-XGADTs"
+    - "-XGeneralizedNewtypeDeriving"
+    - "-XImplicitParams"
+    - "-XInstanceSigs"
+    - "-XKindSignatures"
+    - "-XLambdaCase"
+    - "-XMultiParamTypeClasses"
+    - "-XMultiWayIf"
+    - "-XNamedFieldPuns"
+    - "-XNoImplicitPrelude"
+    - "-XNoMonomorphismRestriction"
+    - "-XOverloadedLabels"
+    - "-XOverloadedLists"
+    - "-XOverloadedStrings"
+    - "-XPackageImports"
+    - "-XPatternSynonyms"
+    - "-XQuasiQuotes"
+    - "-XRankNTypes"
+    - "-XRecordWildCards"
+    - "-XRecursiveDo"
+    - "-XScopedTypeVariables"
+    - "-XStandaloneDeriving"
+    - "-XTemplateHaskell"
+    - "-XTupleSections"
+    - "-XTypeApplications"
+    - "-XTypeFamilies"
+    - "-XTypeFamilyDependencies"
+    - "-XTypeOperators"
+    - "-XViewPatterns"
+
+# Control which extensions/flags/modules/functions can be used
+#
+# - extensions:
+#  - default: false # all extension are banned by default
+#  - name: [PatternGuards, ViewPatterns] # only these listed extensions can be used
+#  - default: true
+#  - name:
+#    - ApplicativeDo
+#    - BangPatterns
+#    - CPP
+#    - ConstraintKinds
+#    - DataKinds
+#    - DefaultSignatures
+#    - DeriveDataTypeable
+#    - DeriveFoldable
+#    - DeriveFunctor
+#    - DeriveGeneric
+#    - DeriveLift
+#    - DeriveTraversable
+#    - DerivingStrategies
+#    - DuplicateRecordFields
+#    - EmptyCase
+#    - EmptyDataDecls
+#    - ExistentialQuantification
+#    - FlexibleContexts
+#    - FlexibleInstances
+#    - FunctionalDependencies
+#    - GADTs
+#    - GeneralizedNewtypeDeriving
+#    - ImplicitParams
+#    - InstanceSigs
+#    - KindSignatures
+#    - LambdaCase
+#    - MultiParamTypeClasses
+#    - MultiWayIf
+#    - NamedFieldPuns
+#    - NoImplicitPrelude
+#    - NoMonomorphismRestriction
+#    - OverloadedLabels
+#    - OverloadedLists
+#    - OverloadedStrings
+#    - PackageImports
+#    - PatternSynonyms
+#    - QuasiQuotes
+#    - RankNTypes
+#    - RecordWildCards
+#    - RecursiveDo
+#    - ScopedTypeVariables
+#    - StandaloneDeriving
+#    - TemplateHaskell
+#    - TupleSections
+#    - TypeApplications
+#    - TypeFamilies
+#    - TypeFamilyDependencies
+#    - TypeOperators
+#    - ViewPatterns
+#   - {name: CPP, within: CrossPlatform} # CPP can only be used in a given module
+#
+# - flags:
+#   - {name: -w, within: []} # -w is allowed nowhere
+#
+# - modules:
+#   - {name: [Data.Set, Data.HashSet], as: Set} # if you import Data.Set qualified, it must be as 'Set'
+#   - {name: Control.Arrow, within: []} # Certain modules are banned entirely
+#
+# - functions:
+#   - {name: unsafePerformIO, within: []} # unsafePerformIO can only appear in no modules
+
+
+# Add custom hints for this project
+#
+# Will suggest replacing "wibbleMany [myvar]" with "wibbleOne myvar"
+# - error: {lhs: "wibbleMany [x]", rhs: wibbleOne x}
+
+
+# Turn on hints that are off by default
+#
+# Ban "module X(module X) where", to require a real export list
+# - warn: {name: Use explicit module export list}
+#
+# Replace a $ b $ c with a . b $ c
+- group: {name: dollar, enabled: true}
+#
+# Generalise map to fmap, ++ to <>
+# - group: {name: generalise, enabled: true}
+
+
+# Ignore some builtin hints
+# - ignore: {name: Use let}
+# - ignore:
+#     name: Eta reduce
+#     within:
+#       - Algebra.PartialOrder.Testing
+#       - Algebra.Predicate.Testing
+#       - Algebra.Lattice.Testing
+#
+# - ignore:
+#     name: Use camelCase
+#     within:
+#       - Algebra.PartialOrder.Testing
+#       - Algebra.Predicate.Testing
+#       - Algebra.Lattice.Testing
+
+# Define some custom infix operators
+# - fixity: infixr 3 ~^#^~
+
+
+# To generate a suitable file for HLint do:
+# $ hlint --default > .hlint.yaml
