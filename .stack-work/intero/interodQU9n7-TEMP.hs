@@ -25,7 +25,6 @@ singleReplaced (a:as) (b:bs)
   | (a /= b) && (as == bs) = True
   | otherwise              = False
 
-
 getCommon :: Eq a => [a] -> [a] -> [a]
 getCommon a b = map fst . filter (uncurry (==)) $ zip a b
 
