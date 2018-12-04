@@ -66,7 +66,7 @@ claimParser = do
   space
   oneOf "@"
   space
-  left <- read  <$> many1 digit
+  left <- read @Int <$> many1 digit
   oneOf ","
   top  <- read <$> many1 digit
   oneOf ":"

@@ -48,7 +48,6 @@
     - "-XMultiParamTypeClasses"
     - "-XMultiWayIf"
     - "-XNamedFieldPuns"
-    - "-XNoImplicitPrelude"
     - "-XNoMonomorphismRestriction"
     - "-XOverloadedLabels"
     - "-XOverloadedLists"
