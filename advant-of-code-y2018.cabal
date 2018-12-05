@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 9bdce66bb5db81823df31066bcac1a9aae94ae987f6bd886bb3fce54237ccc09
+-- hash: 895eaf9dee6e670abd5c4f8b35eb6551dab5601aaab5e1073678efd261c04faa
 
 name:           advant-of-code-y2018
 version:        0.1.0.0
@@ -25,6 +25,7 @@ executable advent-of-code-y2018
       Day2
       Day3
       Day4
+      Day5
       Paths_advant_of_code_y2018
   hs-source-dirs:
       src
@@ -34,4 +35,5 @@ executable advent-of-code-y2018
       base >=4.7 && <5
     , containers
     , parsec
+    , pretty-show
   default-language: Haskell2010
