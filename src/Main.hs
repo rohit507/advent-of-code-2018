@@ -7,4 +7,4 @@ import qualified Day4
 import qualified Day5
 
 main :: IO ()
-main = Day5.part1
+main = Day5.part2
